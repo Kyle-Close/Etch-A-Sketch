@@ -28,8 +28,9 @@ function createGridContainer() {
   // Create container
   let gridContainer = document.createElement("div");
   gridContainer.className = "grid-container";
-  // Append container to body
-  document.body.appendChild(gridContainer);
+  // Append container to grid-section
+  let gridSection = document.querySelector(".grid-section");
+  gridSection.appendChild(gridContainer);
 }
 
 function deleteGridContainer() {
@@ -53,6 +54,7 @@ function drawGrid(gridSize) {
 
     for (let j = 0; j < gridSize; j++) {
       let row = document.createElement("div");
+      row.style.backgroundColor = "white";
       row.addEventListener("mousedown", (e) => {
         e.preventDefault();
         mouseIsDown = true;
