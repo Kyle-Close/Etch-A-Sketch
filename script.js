@@ -1,6 +1,13 @@
 let gridSizeInput = document.querySelector('input[name="size"]');
 let colorInput = document.querySelector('input[name="color"]');
 let resetButton = document.querySelector(".reset");
+let sliderValue = document.querySelector(".slider-value");
+
+let mouseIsDown = false;
+
+document.addEventListener("mouseup", () => {
+  mouseIsDown = false;
+});
 
 resetButton.addEventListener("click", (e) => {
   deleteGridContainer();
@@ -9,7 +16,7 @@ resetButton.addEventListener("click", (e) => {
 });
 
 gridSizeInput.addEventListener("change", (e) => {
-  console.log(e.target.value);
+  sliderValue.textContent = gridSizeInput.value;
   gridSize = Number(gridSizeInput.value);
   console.log(gridSize);
   deleteGridContainer();
@@ -46,8 +53,20 @@ function drawGrid(gridSize) {
 
     for (let j = 0; j < gridSize; j++) {
       let row = document.createElement("div");
-      row.addEventListener("click", (e) => {
+      row.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        mouseIsDown = true;
         row.style.backgroundColor = colorInput.value;
+      });
+      row.addEventListener("auxclick", (e) => {
+        if (e.button == 1) {
+          row.style.backgroundColor = "white";
+        }
+      });
+      row.addEventListener("mouseover", () => {
+        if (mouseIsDown) {
+          row.style.backgroundColor = colorInput.value;
+        }
       });
       row.className = "row";
       if (j == gridSize - 1) {
@@ -64,5 +83,3 @@ function drawGrid(gridSize) {
 
 createGridContainer();
 drawGrid(16);
-
-// #TODO -- Add click and drag feature
