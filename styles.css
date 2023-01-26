@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'Merriweather-Regular';
+    src: url(./fonts/Merriweather-Regular.ttf);
+}
+
 /* -------- Container -------- */
 
 body{
     background-color: #1f2e4196;
+    font-family: 'Merriweather-Regular';
 }
 
 .container{
@@ -9,6 +15,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
 }
 
 /* -------- Header -------- */
@@ -25,12 +32,6 @@ body{
     margin-right: 100px;
 }
 
-/* Tooltip msg:
-
-   * Middle click to reset square to white 
-   * Click and drag for smooth experience
-
-*/
 .grid-section img{
     height: 80px;
     width: auto;
@@ -56,3 +57,64 @@ body{
 }
 
 /* -------- Footer -------- */
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.slider-value{
+    text-align: center;
+    font-size: 25px;
+}
+
+.color-and-clear{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.color-and-clear input{
+    height: 35px;
+    width: 80px;
+}
+
+.color-and-clear button{
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    font-family: 'Merriweather-Regular';
+}
+
+.color-and-clear button:hover{
+    background-color: lightblue;
+}
+
+.color-and-clear button:active{
+    background-color: rgb(110, 194, 223);
+}
+
+.tooltip-popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.tooltip-popup ul{
+    display: none;
+    background-color: white;
+    padding: 0px 50px 30px 50px;
+    border-radius: 20px;
+}
+
+.tooltip-popup h2{
+    text-align: center;
+}

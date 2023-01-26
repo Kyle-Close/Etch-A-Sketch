@@ -2,8 +2,21 @@ let gridSizeInput = document.querySelector('input[name="size"]');
 let colorInput = document.querySelector('input[name="color"]');
 let resetButton = document.querySelector(".reset");
 let sliderValue = document.querySelector(".slider-value");
+let gridSection = document.querySelector(".grid-section");
+let tooltipImage = document.querySelector(".grid-section img");
+let tooltipPopup = document.querySelector(".tooltip-popup ul");
 
 let mouseIsDown = false;
+
+tooltipImage.addEventListener("mouseover", () => {
+  tooltipPopup.style.display = "block";
+  gridSection.style.marginRight = "513px";
+});
+
+tooltipImage.addEventListener("mouseleave", () => {
+  tooltipPopup.style.display = "none";
+  gridSection.style.marginRight = "100px";
+});
 
 document.addEventListener("mouseup", () => {
   mouseIsDown = false;
@@ -16,7 +29,7 @@ resetButton.addEventListener("click", (e) => {
 });
 
 gridSizeInput.addEventListener("change", (e) => {
-  sliderValue.textContent = gridSizeInput.value;
+  sliderValue.textContent = `${gridSizeInput.value} x ${gridSizeInput.value}`;
   gridSize = Number(gridSizeInput.value);
   console.log(gridSize);
   deleteGridContainer();

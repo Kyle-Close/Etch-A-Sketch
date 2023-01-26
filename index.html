@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
     <title>Etch-A-Sketch!</title>
-</head>
-<body>
-
-		<div class="container">
-			<div class="header">
-				<h1>Etch-A-Sketch</h1>
-			</div>
-			<div class="grid-section">
-				<img src="./img/tooltip.png" alt="Tooltip icon">
-			</div>
-			<div class="footer">
-				<div>
-					<div class="slider-container">
-						<div class="slider-value">16</div>
-						<input class="grid-size" name="size" type="range" min="1" max="50" value="16">
-					</div>
-			
-					<input type="color" name="color" value="#FF0000">
-					<button class="reset">Clear Grid</button>
-				</div>
-		</div>
-	
-	</div>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Etch-A-Sketch</h1>
+      </div>
+      <div class="grid-section">
+        <div class="tooltip-popup">
+          <ul>
+            <h2>Hints!</h2>
+            <li>Middle click mouse to reset grid square.</li>
+            <li>Click and drag to draw as you go!</li>
+          </ul>
+        </div>
+        <img src="./img/tooltip.png" alt="Tooltip icon" />
+      </div>
+      <div class="footer">
+        <div class="slider-container">
+          <div class="slider-value">16 x 16</div>
+          <input
+            class="grid-size"
+            name="size"
+            type="range"
+            min="1"
+            max="50"
+            value="16"
+          />
+        </div>
+        <div class="color-and-clear">
+          <input type="color" name="color" value="#FF0000" />
+          <button class="reset">Clear Grid</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
